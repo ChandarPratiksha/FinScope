@@ -6,13 +6,13 @@ print("FinScope - Risk Engine Running...")
 data = pd.read_csv("clean_prices.csv", index_col="Date", parse_dates=True)
 
 if data.isnull().all().all():
-    print("❌ Data is empty. Run data_fetch.py again.")
+    print(" Data is empty. Run data_fetch.py again.")
     exit()
 
 returns = np.log(data / data.shift(1)).dropna()
 
 if returns.empty:
-    print("❌ Returns calculation failed.")
+    print("  Returns calculation failed.")
     exit()
 
 returns.to_csv("returns.csv")
@@ -66,5 +66,6 @@ summary = pd.DataFrame({
 
 summary.to_csv("portfolio_summary.csv", index=False)
 
-print("✅ Risk analysis complete!")
+print(" Risk analysis complete!")
 print(summary)
+
