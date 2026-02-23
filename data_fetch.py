@@ -16,5 +16,6 @@ data = data.dropna()
 
 data.to_csv("clean_prices.csv")
 
-print("✅ Data saved successfully!")
+print(" Data saved successfully!")
 print(data.head())
+
